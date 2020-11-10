@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <!--<persistence-unit name="ogm-unit" transaction-type="JTA">
+        <description>Hibernate OGM EntityManger Unit</description>
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+        <class>com.mamalimomen.domains.User</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="hibernate.ogm.datastore.grid_dialect"
+                      value="org.hibernate.ogm.datastore.mongodb.MongoDBDialect"/>
+            <property name="hibernate.ogm.datastore.provider" value="MONGODB"/>
+            <property name="hibernate.ogm.mongodb.host" value="127.0.0.1"/>
+            <property name="hibernate.ogm.mongodb.port" value="27017"/>
+            <property name="hibernate.ogm.datastore.database" value="HW17_BackEnd"/>
+            <property name="hibernate.transaction.jta.platform"
+                      value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+            &lt;!&ndash; <property name="hibernate.ogm.datastore.username" value="mamali"/>
+             <property name="hibernate.ogm.datastore.password" value="mamali2120"/> &ndash;&gt;
+            <property name="hibernate.ogm.datastore.create_database" value="true"/>
+        </properties>
+    </persistence-unit>-->
+
+    <persistence-unit name="orm-unit">
+        <description>Hibernate ORM EntityManager Unit</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--<class>com.mamalimomen.domains.Travel</class>
+        <class>com.mamalimomen.domains.Ticket</class>-->
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.generate_statistics" value="true"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://127.0.0.1:3306/HW17_BackEnd?createDatabaseIfNotExist=true&amp;autoReconnection=true&amp;characterEncoding=UTF-8&amp;userSSL=false"/>
+            <property name="javax.persistence.jdbc.user" value="mamali"/>
+            <property name="javax.persistence.jdbc.password" value="mamali2120"/>
+            <property name="javax.persistence.sql-load-script-source" value="data.sql"/>
+            <property name="javax.persistence.schema-generation.database.action" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
