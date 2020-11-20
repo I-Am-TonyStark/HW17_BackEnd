@@ -13,7 +13,11 @@
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
-
+<%
+    if (session.getAttribute("userID") == null) {
+        response.sendRedirect("login.jsp");
+    }
+%>
 <%--&nbsp;--%>
 <%--<jsp:include page="menu.jsp"></jsp:include>--%>
 <div class="main-block">
@@ -35,14 +39,19 @@
         </div>
     </form>
     <br/>
-    <% Cookie[] cookies = request.getCookies();
+
+    <% try {
+        Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
             if (cookie.getValue().equals("Manager")) {%>
     <div class="center">
         <a href="/OnlineBusReservation/create.jsp">Create a Travel</a>
     </div>
     <%
+                }
             }
+        } catch (NullPointerException e) {
+            response.sendRedirect("login.jsp");
         }
     %>
 </div>

@@ -51,6 +51,10 @@
             </tbody>
         </table>
     </div>
+    <%} else {%>
+    <hr>
+    <h6>You have not any Ticket yet!</h6>
+    <hr>
     <%}%>
 
     <% for (int i = 0; i < tickets.size(); i++) {

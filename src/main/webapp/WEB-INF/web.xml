@@ -12,7 +12,7 @@
     <!--<security-constraint>
         <web-resource-collection>
             <web-resource-name>login</web-resource-name>
-            <url-pattern>/*</url-pattern>
+            <url-pattern>/login</url-pattern>
             &lt;!&ndash;<http-method>POST</http-method>&ndash;&gt;
         </web-resource-collection>
 

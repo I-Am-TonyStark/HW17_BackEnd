@@ -17,9 +17,10 @@
 <div class="main-block">
     <h1>Operation Result</h1>
     <form name="back_to_menu" method="get" action="/OnlineBusReservation/menu.jsp">
-        <% String message = (String) request.getSession(false).getAttribute("message");
+        <% String message = (String) session.getAttribute("result");
             if (message != null && !message.isEmpty()) { %>
-        <h1><%=message%></h1>
+        <h1><%=message%>
+        </h1>
         <%}%>
         <div class="btn-block">
             <button type="submit">Back To Menu</button>

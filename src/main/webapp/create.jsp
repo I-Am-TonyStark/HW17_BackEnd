@@ -39,7 +39,7 @@
                 <input type="date" placeholder="Travel Date" name="date" required>
                 <input type="time" placeholder="Travel Time" name="time" required>
             </div>
-            <% String message = (String) request.getAttribute("message");
+            <% String message = (String) session.getAttribute("create_message");
                 if (message != null) { %>
             <hr>
             <h6><%=message%>

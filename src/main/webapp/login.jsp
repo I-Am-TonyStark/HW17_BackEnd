@@ -23,7 +23,7 @@
         <label id="icon" for="password"><i class="fas fa-unlock-alt"></i></label>
         <input type="password" name="password" id="password" placeholder="Password" required/>
         <hr>
-        <% String message = (String) request.getAttribute("message");
+        <% String message = (String) request.getAttribute("login_message");
             if (message != null && !message.isEmpty()) { %>
         <h6><%=message%>
         </h6>

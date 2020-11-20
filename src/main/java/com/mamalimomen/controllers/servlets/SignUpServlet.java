@@ -19,7 +19,7 @@ public class SignUpServlet extends HttpServlet {
         String message;
 
         message = us.createNewUser(req);
-        req.setAttribute("message", message);
+        req.getSession(false).setAttribute("signup_message", message);
 
         if (!message.matches("Welcome to our website!")) {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("signup.jsp");

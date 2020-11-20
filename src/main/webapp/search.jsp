@@ -16,6 +16,7 @@
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
+<%--<jsp:include page="header.jsp"></jsp:include>--%>
 <%!
 
 %>
@@ -45,7 +46,7 @@
 
                 <input type="date" name="date" required>
             </div>
-            <% String message = (String) request.getAttribute("message");
+            <% String message = (String) session.getAttribute("search_message");
                 if (message != null) { %>
             <hr>
             <h6><%=message%>

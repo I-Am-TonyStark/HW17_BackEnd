@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 @WebServlet(name = "login", urlPatterns = {"/login"})
-public final class LoginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,7 +35,7 @@ public final class LoginServlet extends HttpServlet {
             User user = oUser.get();
             if (!SecurityManager.checkPasswordHash(password, user.getPassword())) {
                 message = "Wrong Password!";
-                req.setAttribute("message", message);
+                req.setAttribute("login_message", message);
                 RequestDispatcher requestDispatcher = req.getRequestDispatcher("login.jsp");
                 requestDispatcher.include(req, resp);
                 return;
@@ -55,12 +55,12 @@ public final class LoginServlet extends HttpServlet {
         passwordCookie.setMaxAge(-1);
 
         /*usernameCookie.setPath("/security");
-        passwordCookie.setPath("/security");
+        passwordCookie.setPath("/security");*/
 
         usernameCookie.setHttpOnly(true);
         passwordCookie.setHttpOnly(true);
 
-        usernameCookie.setSecure(true);
+        /*usernameCookie.setSecure(true);
         passwordCookie.setSecure(true);*/
 
         resp.addCookie(usernameCookie);

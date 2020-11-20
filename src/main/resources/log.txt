@@ -1,12 +1,145 @@
-22:36:21,308 INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: orm-unit]
-22:36:21,837 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {5.4.4.Final}
-22:36:22,741 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-22:36:23,706 WARN  [org.hibernate.orm.connections.pooling] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18:15:24,718 INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: orm-unit]
+18:15:25,001 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {5.4.4.Final}
+18:15:25,402 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+18:15:25,874 WARN  [org.hibernate.orm.connections.pooling] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
-22:36:23,738 INFO  [org.hibernate.orm.connections.pooling] - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/HW17_BackEnd?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]
-22:36:23,741 INFO  [org.hibernate.orm.connections.pooling] - HHH10001001: Connection properties: {password=****, user=mamali}
-22:36:23,741 INFO  [org.hibernate.orm.connections.pooling] - HHH10001003: Autocommit mode: false
-22:36:23,756 INFO  [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
-22:36:24,908 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-22:36:28,706 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11102341] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-22:36:28,946 INFO  [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.JBossStandAloneJtaPlatform]
+18:15:25,882 INFO  [org.hibernate.orm.connections.pooling] - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/HW17_BackEnd?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]
+18:15:25,883 INFO  [org.hibernate.orm.connections.pooling] - HHH10001001: Connection properties: {password=****, user=mamali}
+18:15:25,883 INFO  [org.hibernate.orm.connections.pooling] - HHH10001003: Autocommit mode: false
+18:15:25,887 INFO  [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+18:15:26,194 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+18:15:27,742 DEBUG [org.hibernate.SQL] - alter table tbl_ticket drop foreign key FKlwml4tbnyv9c6p20o526kc9ni
+18:15:27,746 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4b1bfe9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:15:27,781 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table tbl_ticket drop foreign key FKlwml4tbnyv9c6p20o526kc9ni" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table tbl_ticket drop foreign key FKlwml4tbnyv9c6p20o526kc9ni" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:32)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:16)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw17_backend.tbl_ticket' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+18:15:27,786 DEBUG [org.hibernate.SQL] - drop table if exists tbl_ticket
+18:15:27,792 DEBUG [org.hibernate.SQL] - drop table if exists tbl_travel
+18:15:27,794 DEBUG [org.hibernate.SQL] - drop table if exists tbl_user
+18:15:27,802 DEBUG [org.hibernate.SQL] - create table tbl_ticket (ID bigint not null, owner_gender integer not null, owner_full_name varchar(255) not null, owner_user_ID bigint not null, fk_travel bigint not null, primary key (ID)) engine=InnoDB
+18:15:27,802 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3c0aebc4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:15:27,997 DEBUG [org.hibernate.SQL] - create table tbl_travel (ID bigint not null, destination varchar(255) not null, origin varchar(255) not null, travel_date date not null, travel_time time not null, primary key (ID)) engine=InnoDB
+18:15:28,221 DEBUG [org.hibernate.SQL] - create table tbl_user (ID bigint not null, password varchar(255) not null, username varchar(255) not null, primary key (ID)) engine=InnoDB
+18:15:28,447 DEBUG [org.hibernate.SQL] - alter table tbl_user add constraint UK_k0bty7tbcye41jpxam88q5kj2 unique (username)
+18:15:28,770 DEBUG [org.hibernate.SQL] - alter table tbl_ticket add constraint FKlwml4tbnyv9c6p20o526kc9ni foreign key (fk_travel) references tbl_travel (ID)
+18:15:29,368 INFO  [org.hibernate.tool.schema.internal.SchemaCreatorImpl] - HHH000476: Executing import script 'C:\Program Files\apache-tomcat-8.5.59\bin\data.sql'
+18:15:29,368 WARN  [org.hibernate.tool.schema.internal.exec.ScriptSourceInputFromFile] - Specified schema generation script file [data.sql] did not exist for reading
+18:15:29,423 INFO  [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.JBossStandAloneJtaPlatform]
+18:16:28,079 DEBUG [org.hibernate.SQL] - select user0_.ID as ID1_2_, user0_.password as password2_2_, user0_.username as username3_2_ from tbl_user user0_ where user0_.username=?
+18:16:28,127 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [Manager]
+18:16:28,667 DEBUG [org.hibernate.SQL] - insert into tbl_user (password, username, ID) values (?, ?, ?)
+18:16:28,669 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [$s0$41010$if15rUVg1BLnjoSfEMCZQA==$hEAH2ZFTQup8hKytALby20xfTHyqMe9bKqtZRkoYSuk=]
+18:16:28,669 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [2] as [VARCHAR] - [Manager]
+18:16:28,671 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [3] as [BIGINT] - [32]
+18:16:28,740 DEBUG [org.hibernate.SQL] - select user0_.ID as ID1_2_, user0_.password as password2_2_, user0_.username as username3_2_ from tbl_user user0_ where user0_.username=?
+18:16:28,748 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [Manager]
+18:16:28,752 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([ID1_2_] : [BIGINT]) - [32]
+18:16:40,869 DEBUG [org.hibernate.SQL] - insert into tbl_travel (destination, origin, travel_date, travel_time, ID) values (?, ?, ?, ?, ?)
+18:16:40,870 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [TABRIZ]
+18:16:40,871 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [2] as [VARCHAR] - [TEHRAN]
+18:16:40,874 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [3] as [DATE] - [2020-11-17]
+18:16:40,877 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [4] as [TIME] - [18:16:00]
+18:16:40,879 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [5] as [BIGINT] - [132]
+18:16:52,300 DEBUG [org.hibernate.SQL] - insert into tbl_travel (destination, origin, travel_date, travel_time, ID) values (?, ?, ?, ?, ?)
+18:16:52,302 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [TABRIZ]
+18:16:52,303 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [2] as [VARCHAR] - [TEHRAN]
+18:16:52,304 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [3] as [DATE] - [2020-11-17]
+18:16:52,305 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [4] as [TIME] - [19:16:00]
+18:16:52,306 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [5] as [BIGINT] - [133]
+18:17:21,958 DEBUG [org.hibernate.SQL] - select travel0_.ID as ID1_1_, travel0_.destination as destinat2_1_, travel0_.origin as origin3_1_, travel0_.travel_date as travel_d4_1_, travel0_.travel_time as travel_t5_1_ from tbl_travel travel0_ where travel0_.origin=? and travel0_.destination=? and travel0_.travel_date=?
+18:17:21,960 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [TEHRAN]
+18:17:21,961 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [2] as [VARCHAR] - [TABRIZ]
+18:17:21,962 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [3] as [DATE] - [2020-11-17]
+18:17:22,086 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([ID1_1_] : [BIGINT]) - [132]
+18:17:22,086 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([ID1_1_] : [BIGINT]) - [133]
+18:38:34,242 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] - Session Metrics {
+    14441425 nanoseconds spent acquiring 6 JDBC connections;
+    7023925 nanoseconds spent releasing 6 JDBC connections;
+    50945463 nanoseconds spent preparing 6 JDBC statements;
+    149744255 nanoseconds spent executing 6 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    75213594 nanoseconds spent executing 3 flushes (flushing a total of 6 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+18:38:34,279 INFO  [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+18:38:34,282 DEBUG [org.hibernate.SQL] - alter table tbl_ticket drop foreign key FKlwml4tbnyv9c6p20o526kc9ni
+18:38:34,284 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@75574db] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:38:34,388 DEBUG [org.hibernate.SQL] - drop table if exists tbl_ticket
+18:38:34,529 DEBUG [org.hibernate.SQL] - drop table if exists tbl_travel
+18:38:34,657 DEBUG [org.hibernate.SQL] - drop table if exists tbl_user
+18:38:34,919 INFO  [org.hibernate.orm.connections.pooling] - HHH10001008: Cleaning up connection pool [jdbc:mysql://127.0.0.1:3306/HW17_BackEnd?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]

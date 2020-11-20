@@ -19,7 +19,7 @@ public class BuyServlet extends HttpServlet {
 
         String message = ts.createNewTicketByTravelID(req);
 
-        req.getSession(false).setAttribute("message", message);
+        req.getSession(false).setAttribute("result", message);
 
         resp.sendRedirect("/OnlineBusReservation/result.jsp");
     }

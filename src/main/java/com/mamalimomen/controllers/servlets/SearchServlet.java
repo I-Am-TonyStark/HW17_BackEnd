@@ -22,8 +22,7 @@ public class SearchServlet extends HttpServlet {
             List<Travel> travels = ts.retrieveManyTravelsBySearch(req);
 
             if (travels.isEmpty()) {
-                req.setAttribute("message", "We can't found anything!");
-                System.out.println("We can't found anything!");
+                req.getSession(false).setAttribute("search_message", "We can't found anything!");
             }
 
             travels.sort(Travel::compareTo);

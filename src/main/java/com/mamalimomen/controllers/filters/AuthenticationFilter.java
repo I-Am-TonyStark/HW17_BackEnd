@@ -20,7 +20,7 @@ public final class AuthenticationFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession(false);
         Cookie[] cookies = req.getCookies();
-        if (session != null && cookies.length == 3) {
+        if (session != null && cookies.length >= 3) {
             chain.doFilter(request, response);
         } else {
             ((HttpServletResponse) response).sendRedirect("/OnlineBusReservation/login.jsp");

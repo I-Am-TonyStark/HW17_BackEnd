@@ -20,7 +20,7 @@ public class CancelServlet extends HttpServlet {
             TicketService ts = AppManager.getService(Services.TICKET_SERVICE);
             String message = ts.deleteExistTicketByID(req);
 
-            req.getSession(false).setAttribute("message", message);
+            req.getSession(false).setAttribute("result", message);
 
             resp.sendRedirect("/OnlineBusReservation/result.jsp");
         } catch (NullPointerException e) {

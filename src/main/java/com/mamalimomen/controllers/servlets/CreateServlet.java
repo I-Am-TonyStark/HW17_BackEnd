@@ -19,7 +19,7 @@ public class CreateServlet extends HttpServlet {
         TravelService ts = AppManager.getService(Services.TRAVEL_SERVICE);
         String message = ts.createNewTravel(req);
 
-        req.setAttribute("message", message);
+        req.getSession(false).setAttribute("create_message", message);
         resp.sendRedirect("/OnlineBusReservation/create.jsp");
     }
 }

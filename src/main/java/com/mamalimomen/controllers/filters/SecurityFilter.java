@@ -19,7 +19,7 @@ public class SecurityFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
         Cookie[] cookies = ((HttpServletRequest) request).getCookies();
-        if (cookies.length == 3) {
+        if (cookies.length >= 3) {
             for(Cookie cookie : cookies){
                 if (cookie.getValue().equals("Manager")){
                     chain.doFilter(request, response);
